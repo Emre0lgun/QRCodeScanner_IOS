@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Generate QR Code-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="GeneratorViewController" customModule="QR_Codes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkX-gb-Z6z">
+                                <rect key="frame" x="20" y="241.5" width="374" height="374"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jkX-gb-Z6z" secondAttribute="height" multiplier="1:1" id="VKR-1B-gNf"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="512" id="k7F-6t-MjS"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="512" id="tqT-Uq-1AL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.96862745098039216" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jkX-gb-Z6z" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="6ve-vC-Xdp"/>
+                            <constraint firstItem="jkX-gb-Z6z" firstAttribute="centerY" secondItem="PQr-Ze-W5v" secondAttribute="centerY" id="IX4-PM-OKw"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="jkX-gb-Z6z" secondAttribute="trailing" constant="20" id="d1e-b6-tSO"/>
+                            <constraint firstItem="jkX-gb-Z6z" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="sOD-xh-Ok3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Generate QR Code" image="qrcode" catalog="system" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="imageView" destination="jkX-gb-Z6z" id="Sr3-tl-4Lx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
+        </scene>
+        <!--Scan QR Code-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="ReaderViewController" customModule="QR_Codes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5z-wA-jD8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="537.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="900" constant="40" id="vU0-1b-eeZ"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="INB-lT-sbJ">
+                                <rect key="frame" x="16" y="627.5" width="382" height="175.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKc-Nh-hfB">
+                                <rect key="frame" x="161.5" y="589.5" width="91" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="6" maxX="10" maxY="6"/>
+                                <state key="normal" title="Start/Stop"/>
+                                <connections>
+                                    <action selector="startStopPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="o6q-lJ-RQi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.96862745098039216" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="INB-lT-sbJ" secondAttribute="trailing" constant="16" id="03j-5s-S3t"/>
+                            <constraint firstItem="n5z-wA-jD8" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="3/5" id="6m2-BP-2Hx"/>
+                            <constraint firstItem="n5z-wA-jD8" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="Pdx-BJ-4bR"/>
+                            <constraint firstItem="mKc-Nh-hfB" firstAttribute="top" secondItem="n5z-wA-jD8" secondAttribute="bottom" constant="8" id="aqW-DA-0tr"/>
+                            <constraint firstItem="n5z-wA-jD8" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="dwb-wM-0UD"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="INB-lT-sbJ" secondAttribute="bottom" constant="10" id="eub-hl-OZ9"/>
+                            <constraint firstItem="INB-lT-sbJ" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="fNw-SN-Io2"/>
+                            <constraint firstItem="INB-lT-sbJ" firstAttribute="top" secondItem="mKc-Nh-hfB" secondAttribute="bottom" constant="8" id="nZR-He-ct6"/>
+                            <constraint firstItem="mKc-Nh-hfB" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="oZW-1c-Gst"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="n5z-wA-jD8" secondAttribute="trailing" id="p9B-Yz-MmM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Scan QR Code" image="qrcode.viewfinder" catalog="system" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="cameraContainerHeightConstraint" destination="6m2-BP-2Hx" id="Sfh-vU-ZNW"/>
+                        <outlet property="cameraContainerView" destination="n5z-wA-jD8" id="ukW-Y3-BYl"/>
+                        <outlet property="outputTextView" destination="INB-lT-sbJ" id="MDI-5O-kHT"/>
+                        <outlet property="startStopButton" destination="mKc-Nh-hfB" id="Gag-mO-3xk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="qrcode" catalog="system" width="64" height="56"/>
+        <image name="qrcode.viewfinder" catalog="system" width="64" height="56"/>
+    </resources>
+</document>

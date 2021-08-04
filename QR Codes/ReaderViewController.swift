@@ -23,6 +23,8 @@ class ReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         view.layer.borderWidth = 3
         return view
     }()
+    
+    //Emre OLGUN
 
 	// MARK: View Life Cycle
 	

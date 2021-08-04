@@ -19,6 +19,8 @@ class GeneratorViewController: UIViewController, UITextViewDelegate {
 		
 		refreshQRCode()
 	}
+    
+    //Şüheda
 	
 	
 	func refreshQRCode() {
